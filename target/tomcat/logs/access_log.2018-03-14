@@ -1,0 +1,17 @@
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:45:31 +0800] "GET /hello.action HTTP/1.1" 200 268 http-bio-8080-exec-1 594
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:03 +0800] "GET /customer/list.action HTTP/1.1" 200 14622 http-bio-8080-exec-2 692
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:03 +0800] "GET /css/boot-crm.css HTTP/1.1" 200 52 http-bio-8080-exec-8 2
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:03 +0800] "GET /css/sb-admin-2.css HTTP/1.1" 200 5593 http-bio-8080-exec-6 31
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:03 +0800] "GET /css/metisMenu.min.css HTTP/1.1" 200 781 http-bio-8080-exec-4 33
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:03 +0800] "GET /css/dataTables.bootstrap.css HTTP/1.1" 200 7616 http-bio-8080-exec-5 40
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:03 +0800] "GET /css/font-awesome.min.css HTTP/1.1" 200 21984 http-bio-8080-exec-7 45
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:03 +0800] "GET /js/metisMenu.min.js HTTP/1.1" 200 1879 http-bio-8080-exec-10 1
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:03 +0800] "GET /js/dataTables.bootstrap.min.js HTTP/1.1" 200 1942 http-bio-8080-exec-7 1
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:03 +0800] "GET /js/jquery.min.js HTTP/1.1" 200 84380 http-bio-8080-exec-9 169
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:03 +0800] "GET /js/bootstrap.min.js HTTP/1.1" 200 36868 http-bio-8080-exec-4 59
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:03 +0800] "GET /js/sb-admin-2.js HTTP/1.1" 200 1181 http-bio-8080-exec-10 1
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:03 +0800] "GET /css/bootstrap.min.css HTTP/1.1" 200 121260 http-bio-8080-exec-3 231
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:03 +0800] "GET /js/jquery.dataTables.min.js HTTP/1.1" 200 81702 http-bio-8080-exec-5 112
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:03 +0800] "GET /fonts/fontawesome-webfont.woff?v=4.2.0 HTTP/1.1" 200 65452 http-bio-8080-exec-5 28
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:04 +0800] "GET /js/jquery.min.map HTTP/1.1" 404 985 http-bio-8080-exec-5 2
+0:0:0:0:0:0:0:1 - - [14/Mar/2018:10:46:04 +0800] "GET /css/bootstrap.min.css.map HTTP/1.1" 404 1001 http-bio-8080-exec-5 1
