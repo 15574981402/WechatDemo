@@ -1,0 +1,22 @@
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yckj.dao.IAutoreplyDao">
+	<select id="list" parameterType="string" resultType="cn.yckj.entity.WEAutoreply">
+		select * from we_autoreply where systemtype=#{systemtype} order by SYSTEMID
+	</select>
+	<select id="maxSystemid">
+		select nvl(max(to_number(systemid)),#{systemtype}*1000) from we_autoreply where systemtype=#{systemtype}
+	</select>
+	<insert id="insert">
+	<!-- systemtype	nvarchar2(10)	y			系统类型
+	systemid	nvarchar2(10)	n			系统编号
+	url	nvarchar2(200)	y			问题解决页面地址
+	autocontent	nvarchar2(300)	y			问题提示内容 -->
+		insert into we_autoreply(systemtype,systemid,url,autocontent)
+			values(#{systemtype},#{systemid},#{url},#{autocontent})
+	</insert>
+	<update id="update">
+		update we_autoreply set url=#{url},autocontent=#{autocontent},systemtype=#{systemtype} where systemid=#{systemid}
+	</update>
+</mapper>

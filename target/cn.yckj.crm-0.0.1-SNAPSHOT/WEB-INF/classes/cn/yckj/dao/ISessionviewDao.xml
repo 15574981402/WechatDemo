@@ -1,0 +1,19 @@
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yckj.dao.ISessionviewDao">
+
+	<insert id="insert">
+		insert into
+		we_sessionview(SVID,SID,STIME,SENDID,REVIEWID,MSGTYPE,MSGCONTENT,aremake)
+		values(#{svid},#{sid},#{stime},#{sendid},#{reviewid},#{msgtype},#{msgcontent},#{aremake})
+	</insert>
+	<select id="maxIntSvid" resultType="string">
+		select max(to_number(nvl(
+		Svid ,0))) from we_sessionview where sid =#{stateOrSid}
+	</select>
+	<select id="list" resultType="cn.yckj.entity.WESessionview">
+		select * from we_sessionview where
+		sid =#{stateOrSid} order by STIME desc
+	</select>
+</mapper>

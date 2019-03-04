@@ -1,0 +1,8 @@
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yckj.dao.IModeDao">
+	<select id="list" resultType="cn.yckj.entity.WEMode">
+		select * from WE_SYSMODE where systemtype=#{systemtype} order by moduleid
+	</select>
+</mapper>

@@ -12,12 +12,15 @@
 		http://www.springframework.org/schema/aop 
 		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd 
 		http://www.springframework.org/schema/tx 
-		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/task
+   		http://www.springframework.org/schema/task/spring-task-4.0.xsd
+		http://code.alibabatech.com/schema/dubbo        
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
 	<!-- 配置 读取properties文件 jdbc.properties -->
-	<context:property-placeholder location="classpath:resource.properties" />
-	
-	<context:component-scan base-package="com.it.boot.controller" />
+	<context:property-placeholder location="classpath:path.properties" />
+	<context:component-scan base-package="cn.yckj.controller" />
 	<!-- 配置处理器映射器 适配器 -->
 	<mvc:annotation-driven />
 	<!-- 配置视图解释器 jsp -->
@@ -26,5 +29,11 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-
+	<!-- 多部分文件上传 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8"></property>
+		<property name="maxUploadSize" value="10485760000"></property>
+		<property name="maxInMemorySize" value="40960"></property>
+	</bean>
 </beans>		

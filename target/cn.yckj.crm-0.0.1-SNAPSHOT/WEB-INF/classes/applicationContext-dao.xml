@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:task="http://www.springframework.org/schema/task" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xmlns:task="http://www.springframework.org/schema/task" 
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
 		http://www.springframework.org/schema/mvc 
@@ -15,9 +15,7 @@
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 		http://www.springframework.org/schema/task
-   		http://www.springframework.org/schema/task/spring-task-4.0.xsd
-		http://code.alibabatech.com/schema/dubbo        
-		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+   		http://www.springframework.org/schema/task/spring-task-4.0.xsd">
 
 	<!-- 配置 读取properties文件 jdbc.properties -->
 	<context:property-placeholder location="classpath:jdbc.properties" />
@@ -47,7 +45,7 @@
 	<!-- 配置 1：原始Dao开发 接口实现类 Mapper.xml 三个 2：接口开发 接口 不写实现类 Mapper.xml 二个 （UserDao、ProductDao 
 		、BrandDao。。。。。。。） 3：接口开发、并支持扫描 cn.itcast.core.dao(UserDao。。。。。） 写在此包下即可被扫描到 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.it.boot.dao" />
+		<property name="basePackage" value="cn.yckj.dao" />
 	</bean>
 
 </beans>

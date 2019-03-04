@@ -1,0 +1,28 @@
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yckj.dao.IProblemDao">
+	<insert id="insert" parameterType="cn.yckj.entity.WEProblem" >
+		insert into WE_Problem(ptype,pid,pdesc,pmodule,purl,puser,pusertime,pstate,systemtype)
+			values(#{ptype},#{pid},#{pdesc},#{pmodule},#{purl,jdbcType=VARCHAR,javaType=java.lang.String},#{puser},#{pusertime},#{pstate},#{systemtype})
+		<!-- 
+		ptype	varchar2(20)	n			问题申报/系统优化
+	pid	varchar2(10)	n			问题编号
+	pdesc	varchar2(400)	y			问题描述
+	pmodule	varchar2(100)	y			问题模块
+	purl	varchar2(100)	y			问题附件编号
+	puser	varchar2(100)	y			问题提出人
+	pusertime	varchar2(100)	y			问题提出时间
+	pcustom	varchar2(100)	y			问题对接人
+	pcustomt	varchar2(100)	y			问题对接时间
+	pstate	varchar2(20)	n			问题状态
+	systemtype	nvarchar2(50)	y			系统编号
+ -->
+	</insert>
+	<select id="list" parameterType="string" resultType="cn.yckj.entity.WEProblem">
+		select p.*,s.systemname,m.modulename  from WE_Problem p,WE_System s,WE_SYSMode m where p.pmodule=m.moduleid and p.systemtype=s.systemtype and puser=#{puser} and ptype=#{ptype} order by pusertime desc
+	</select>
+	<select id="maxPid" resultType="string">
+				select nvl(max(to_number( pid )),0) from WE_Problem
+	</select>
+</mapper>

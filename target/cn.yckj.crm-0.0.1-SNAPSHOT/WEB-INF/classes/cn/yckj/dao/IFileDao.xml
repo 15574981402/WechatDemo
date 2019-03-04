@@ -1,0 +1,18 @@
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yckj.dao.IFileDao">
+	<select id="maxFileid" resultType="string">
+		select nvl(max(to_number( Fileid )),0) from we_file
+	</select>
+	<insert id="insert" parameterType="cn.yckj.entity.WEFile">
+<!-- 	/*fileid	nvarchar2(10)	y			附件编号
+	filename	nvarchar2(200)	y			附件原始文件名
+	filepath	nvarchar2(300)	y			附件路径
+	fileuserid	nvarchar2(80)	y			附件上传人编号
+	filetime	nvarchar2(60)	y			附件上传时间*/ -->
+		insert into we_file(fileid,filename,filepath,fileuserid,filetime)
+		values(#{fileid},#{filename},#{filepath},#{fileuserid},#{filetime})
+	</insert>
+
+</mapper>
